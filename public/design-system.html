@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dna Air Cargo — Design System</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-50:#F1F4FF; --blue-100:#DCE4FF; --blue-500:#3D63F0; --blue-600:#2B4FE0; --blue-700:#1D3FC7;
+    --green-50:#E9FAF0; --green-600:#1BA64C; --green-700:#158A3F;
+    --navy:#0E1A33; --slate-600:#57647C; --slate-400:#8A93A6; --line:#E4E8F0; --bg:#F7F8FB; --white:#fff;
+    --radius-sm:7px; --radius-md:10px; --radius-lg:14px;
+    --font-display:'Manrope',sans-serif; --font-body:'Inter',sans-serif; --font-mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:var(--font-body); color:var(--navy); background:var(--white); padding:0 0 80px;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
+  h1{font-family:var(--font-display); font-weight:800; font-size:32px;}
+  h2{font-family:var(--font-display); font-weight:700; font-size:20px; margin-top:56px; margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid var(--line);}
+  .top{background:var(--navy); color:#fff; padding:48px 0 40px; margin-bottom:8px;}
+  .top p{color:#B9C4E0; margin-top:8px; font-size:14.5px;}
+  .badge{display:inline-flex; font-family:var(--font-mono); font-size:11px; background:rgba(255,255,255,.1); padding:4px 10px; border-radius:100px; margin-top:16px; color:var(--blue-100);}
+
+  .swatch-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:16px;}
+  .swatch{border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden;}
+  .swatch .fill{height:70px;}
+  .swatch .meta{padding:10px 12px; font-family:var(--font-mono); font-size:11px;}
+  .swatch .meta b{display:block; font-family:var(--font-body); font-weight:600; font-size:13px; margin-bottom:2px;}
+
+  .type-row{display:flex; align-items:baseline; gap:16px; padding:14px 0; border-bottom:1px solid var(--line);}
+  .type-row .tag{font-family:var(--font-mono); font-size:11px; color:var(--slate-400); width:90px; flex-shrink:0;}
+  .type-row .sample{font-family:var(--font-display); font-weight:700;}
+
+  .btn{display:inline-flex; align-items:center; gap:8px; font-family:var(--font-body); font-weight:600; font-size:15px; padding:12px 22px; border-radius:100px; border:1.5px solid transparent; cursor:pointer;}
+  .btn-primary{background:var(--blue-600); color:#fff;}
+  .btn-primary:hover{background:var(--blue-700);}
+  .btn-whatsapp{background:var(--green-600); color:#fff;}
+  .btn-outline{border-color:var(--line); color:var(--navy); background:#fff;}
+  .row{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-bottom:12px;}
+  .row .label{font-family:var(--font-mono); font-size:11px; color:var(--slate-400); width:110px;}
+
+  .card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:24px; max-width:320px; box-shadow:0 1px 3px rgba(14,26,51,.06); transition:.2s;}
+  .card:hover{box-shadow:0 8px 24px rgba(43,79,224,.08); transform:translateY(-2px);}
+  .card h3{font-family:var(--font-display); font-size:17px; margin-bottom:8px;}
+  .card p{font-size:14px; color:var(--slate-600); line-height:1.55;}
+
+  .field{max-width:320px; margin-bottom:14px;}
+  .field label{font-size:13px; font-weight:600; margin-bottom:7px; display:block;}
+  .field input{width:100%; border:1.5px solid var(--line); border-radius:var(--radius-sm); padding:11px 13px; font-family:var(--font-body); font-size:14px;}
+  .field input:focus{outline:none; border-color:var(--blue-500);}
+
+  .space-demo{display:flex; align-items:flex-end; gap:6px;}
+  .space-bar{background:var(--blue-600); width:24px;}
+  .space-demo .lbl{font-family:var(--font-mono); font-size:10px; color:var(--slate-400); text-align:center; margin-top:6px;}
+
+  .radius-demo{display:flex; gap:20px;}
+  .radius-box{width:80px; height:80px; background:var(--blue-50); border:1.5px solid var(--blue-100); display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:11px; color:var(--blue-700);}
+
+  .dont{border:1.5px dashed #E8A6A6; background:#FDF4F4; border-radius:var(--radius-md); padding:16px 18px; margin-top:8px;}
+  .dont b{color:#C23A3A;}
+  .dont ul{margin-top:8px; padding-left:18px; font-size:13.5px; color:var(--slate-600); line-height:1.8;}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <h1>Design System — Dna Air Cargo</h1>
+    <p>Fonte visual dos tokens em design-tokens.json. Base = identidade original do cliente + melhorias v2.</p>
+    <span class="badge">v2 fiel · não v3 experimental</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <h2>Cor — marca</h2>
+  <div class="swatch-grid">
+    <div class="swatch"><div class="fill" style="background:#F1F4FF"></div><div class="meta"><b>blue-50</b>#F1F4FF</div></div>
+    <div class="swatch"><div class="fill" style="background:#DCE4FF"></div><div class="meta"><b>blue-100</b>#DCE4FF</div></div>
+    <div class="swatch"><div class="fill" style="background:#3D63F0"></div><div class="meta" style="color:#fff"><b style="color:#fff">blue-500</b>#3D63F0</div></div>
+    <div class="swatch"><div class="fill" style="background:#2B4FE0"></div><div class="meta"><b>blue-600 · primária</b>#2B4FE0</div></div>
+    <div class="swatch"><div class="fill" style="background:#1D3FC7"></div><div class="meta"><b>blue-700 · hover</b>#1D3FC7</div></div>
+    <div class="swatch"><div class="fill" style="background:#1BA64C"></div><div class="meta"><b>green-600 · só WhatsApp</b>#1BA64C</div></div>
+  </div>
+
+  <h2>Cor — neutros</h2>
+  <div class="swatch-grid">
+    <div class="swatch"><div class="fill" style="background:#0E1A33"></div><div class="meta"><b>navy</b>#0E1A33</div></div>
+    <div class="swatch"><div class="fill" style="background:#57647C"></div><div class="meta"><b>slate-600</b>#57647C</div></div>
+    <div class="swatch"><div class="fill" style="background:#8A93A6"></div><div class="meta"><b>slate-400</b>#8A93A6</div></div>
+    <div class="swatch"><div class="fill" style="background:#E4E8F0"></div><div class="meta"><b>line</b>#E4E8F0</div></div>
+    <div class="swatch"><div class="fill" style="background:#F7F8FB"></div><div class="meta"><b>bg</b>#F7F8FB</div></div>
+    <div class="swatch"><div class="fill" style="background:#FFFFFF; border-bottom:1px solid #eee"></div><div class="meta"><b>white</b>#FFFFFF</div></div>
+  </div>
+
+  <h2>Tipografia</h2>
+  <div class="type-row"><span class="tag">4xl / h1</span><span class="sample" style="font-size:clamp(32px,4.4vw,50px)">Conectamos o Brasil</span></div>
+  <div class="type-row"><span class="tag">3xl / h2</span><span class="sample" style="font-size:34px">Monte a rota da sua carga</span></div>
+  <div class="type-row"><span class="tag">2xl / h3</span><span class="sample" style="font-size:26px">Cargo aéreo</span></div>
+  <div class="type-row"><span class="tag">lg / lede</span><span style="font-size:17px; font-family:var(--font-body); color:var(--slate-600)">Soluções completas em logística e transporte de cargas.</span></div>
+  <div class="type-row"><span class="tag">base / body</span><span style="font-size:15.5px; font-family:var(--font-body)">Texto padrão de parágrafo, usado no corpo das seções.</span></div>
+  <div class="type-row"><span class="tag">sm / label</span><span style="font-size:14px; font-family:var(--font-body); font-weight:600">Nome completo</span></div>
+
+  <h2>Botões</h2>
+  <div class="row"><span class="label">Primary</span><button class="btn btn-primary">Solicitar orçamento</button></div>
+  <div class="row"><span class="label">WhatsApp</span><button class="btn btn-whatsapp">Falar no WhatsApp</button></div>
+  <div class="row"><span class="label">Outline</span><button class="btn btn-outline">Ver detalhes</button></div>
+
+  <h2>Card</h2>
+  <div class="card">
+    <h3>Cargo aéreo</h3>
+    <p>Entregas nacionais e internacionais com prazos de horas, ideal pra carga sensível a tempo.</p>
+  </div>
+
+  <h2>Input</h2>
+  <div class="field"><label>E-mail</label><input placeholder="seu@email.com"></div>
+
+  <h2>Espaçamento (múltiplos de 4px)</h2>
+  <div class="space-demo">
+    <div><div class="space-bar" style="height:8px"></div><div class="lbl">2 · 8px</div></div>
+    <div><div class="space-bar" style="height:16px"></div><div class="lbl">4 · 16px</div></div>
+    <div><div class="space-bar" style="height:24px"></div><div class="lbl">6 · 24px</div></div>
+    <div><div class="space-bar" style="height:40px"></div><div class="lbl">10 · 40px</div></div>
+    <div><div class="space-bar" style="height:64px"></div><div class="lbl">16 · 64px</div></div>
+    <div><div class="space-bar" style="height:96px"></div><div class="lbl">24 · 96px</div></div>
+  </div>
+
+  <h2>Radius (máximo 14px)</h2>
+  <div class="radius-demo">
+    <div class="radius-box" style="border-radius:7px">sm · 7px</div>
+    <div class="radius-box" style="border-radius:10px">md · 10px</div>
+    <div class="radius-box" style="border-radius:14px">lg · 14px</div>
+  </div>
+
+  <h2>Fora do padrão (não usar sem aprovação explícita)</h2>
+  <div class="dont">
+    <b>Elementos do v3 descartados:</b>
+    <ul>
+      <li>Nav em formato de pílula flutuante com blur</li>
+      <li>Grid bento assimétrico</li>
+      <li>Cards flutuando sobre foto com animação contínua</li>
+      <li>Marquee de logos de parceiros</li>
+      <li>Radius acima de 14px / glassmorphism</li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>

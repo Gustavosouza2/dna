@@ -1,0 +1,91 @@
+{
+  "$description": "Design tokens - Dna Air Cargo. Baseado na identidade visual original do cliente + melhorias aprovadas (v2). Fonte da verdade para tailwind.config e globals.css.",
+
+  "color": {
+    "brand": {
+      "blue": {
+        "50":  { "value": "#F1F4FF", "usage": "fundos suaves, badges, hover leve" },
+        "100": { "value": "#DCE4FF", "usage": "bordas de destaque, divisores em seções azuis" },
+        "500": { "value": "#3D63F0", "usage": "estados de foco, links secundários" },
+        "600": { "value": "#2B4FE0", "usage": "COR PRIMÁRIA - botões, links ativos, ícones de destaque" },
+        "700": { "value": "#1D3FC7", "usage": "hover/active de botão primário" }
+      },
+      "green": {
+        "50":  { "value": "#E9FAF0", "usage": "fundo de badge de confirmação" },
+        "600": { "value": "#1BA64C", "usage": "COR WHATSAPP - reservada só pra CTA de WhatsApp, não usar em mais nada" },
+        "700": { "value": "#158A3F", "usage": "hover do botão WhatsApp" }
+      }
+    },
+    "neutral": {
+      "navy":     { "value": "#0E1A33", "usage": "texto principal, headings, fundo de footer/seções escuras" },
+      "slate600": { "value": "#57647C", "usage": "texto secundário, parágrafos" },
+      "slate400": { "value": "#8A93A6", "usage": "placeholder, texto terciário/legendas" },
+      "line":     { "value": "#E4E8F0", "usage": "bordas, divisores" },
+      "bg":       { "value": "#F7F8FB", "usage": "fundo de seção alternada (zebra entre seções)" },
+      "white":    { "value": "#FFFFFF", "usage": "fundo padrão, cards" }
+    },
+    "$rule": "NÃO introduzir cores fora desta paleta sem atualizar este arquivo. Âmbar/laranja e paletas 'tech dark' foram avaliadas e descartadas (ver DESIGN_SYSTEM.md > Histórico de decisões)."
+  },
+
+  "typography": {
+    "fontFamily": {
+      "display": { "value": "'Manrope', sans-serif", "usage": "títulos (h1-h4), logo, números de destaque" },
+      "body":    { "value": "'Inter', sans-serif", "usage": "parágrafos, labels, botões, nav" }
+    },
+    "fontSize": {
+      "xs":   { "value": "12.5px", "lineHeight": "1.4" },
+      "sm":   { "value": "14px",   "lineHeight": "1.5" },
+      "base": { "value": "15.5px", "lineHeight": "1.6" },
+      "lg":   { "value": "17px",   "lineHeight": "1.65" },
+      "xl":   { "value": "20px",   "lineHeight": "1.3" },
+      "2xl":  { "value": "26px",   "lineHeight": "1.2" },
+      "3xl":  { "value": "34px",   "lineHeight": "1.15" },
+      "4xl":  { "value": "clamp(32px, 4.4vw, 50px)", "lineHeight": "1.12" }
+    },
+    "fontWeight": {
+      "regular": 400,
+      "medium":  500,
+      "semibold":600,
+      "bold":    700,
+      "extrabold": 800
+    }
+  },
+
+  "spacing": {
+    "$scale": "múltiplos de 4px",
+    "1": "4px", "2": "8px", "3": "12px", "4": "16px", "5": "20px",
+    "6": "24px", "8": "32px", "10": "40px", "12": "48px",
+    "16": "64px", "20": "80px", "24": "96px",
+    "$sectionPaddingY": "90-96px desktop / 56px mobile"
+  },
+
+  "radius": {
+    "sm": { "value": "7px",  "usage": "inputs, badges pequenos" },
+    "md": { "value": "10px", "usage": "cards, botões" },
+    "lg": { "value": "14px", "usage": "cards grandes, painéis (form, steps)" },
+    "$rule": "não usar radius acima de 14px - mantém a linguagem do site atual, evita cara de 'bento/glass' do v3"
+  },
+
+  "shadow": {
+    "sm": { "value": "0 1px 3px rgba(14,26,51,.06)", "usage": "cards em repouso" },
+    "md": { "value": "0 8px 24px rgba(43,79,224,.08)", "usage": "hover de card" }
+  },
+
+  "breakpoint": {
+    "sm": "640px",
+    "md": "720px",
+    "lg": "920px",
+    "xl": "1200px"
+  },
+
+  "motion": {
+    "duration": { "fast": "150ms", "base": "200ms", "reveal": "500ms" },
+    "easing": "ease",
+    "scrollReveal": {
+      "value": "fade + translateY(16px→0) ao entrar no viewport, uma vez por elemento",
+      "usage": "cada seção de página (hero, cards de serviço, benefícios) — já existe no site atual, mantido por fidelidade, não é invenção nova",
+      "respectsReducedMotion": true
+    },
+    "$rule": "motion é utilitário (hover, transição de estado, scroll-reveal já existente no site), nunca decorativo novo (sem glow, sem parallax, sem HUD animado)"
+  }
+}
