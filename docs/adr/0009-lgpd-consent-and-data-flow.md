@@ -12,7 +12,7 @@ O formulário de orçamento coleta dados pessoais (nome, e-mail, telefone, orige
 
 - Dado flui do formulário para a Server Action, que valida (Zod) e envia via Resend. Nenhum banco de dados, planilha, CRM ou analytics próprio armazena os dados submetidos — a única cópia persistente é o e-mail recebido pela Dna Air Cargo (fora do controle da aplicação).
 - Schema Zod do formulário inclui um campo de consentimento obrigatório (`z.literal(true)`, com mensagem de erro se desmarcado) — o formulário não pode ser enviado sem essa marcação.
-- Checkbox de consentimento no formulário linka para uma nova rota estática `/politica-de-privacidade`.
+- Checkbox de consentimento no formulário linka para uma nova rota estática `/privacidade`.
 - A página de política de privacidade cobre: dados coletados, finalidade, base legal (art. 7º, V — procedimento preliminar a contrato), destinatário e transferência internacional (Resend, EUA, declarada explicitamente conforme art. 33 da LGPD), direitos do titular e canal de contato para exercê-los.
 
 ## Consequências

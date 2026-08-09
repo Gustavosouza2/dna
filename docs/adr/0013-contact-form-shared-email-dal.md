@@ -2,7 +2,7 @@
 
 ## Status
 
-Aceito — 2026-08-06
+Aceito — 2026-08-06. **"Server Actions" substituídas por Route Handlers na [ADR 0015](0015-route-handlers-as-bff.md)** — `lib/actions/*` viraram `app/api/*/route.ts`. O DAL compartilhado (`sendNotificationEmail`) e a separação de schemas/rate-limit por formulário descritos abaixo continuam exatamente iguais.
 
 ## Contexto
 

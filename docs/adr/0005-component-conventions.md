@@ -2,7 +2,7 @@
 
 ## Status
 
-Aceito — 2026-08-06
+Aceito — 2026-08-06. **Estilo shadcn emendado em 2026-08-06 na implementação**: `new-york` não existe mais no CLI instalado (`shadcn@4.16.2`) — essa geração da ferramenta roda sobre `@base-ui/react` (não Radix) com um sistema de presets novo (`nova, vega, maia, lyra, mira, luma, sera, rhea`, sem `new-york`/`default`). Usado o preset default do próprio CLI (`nova`, via `shadcn init -d`), já que os presets controlam convenções internas dos componentes gerados, não cor/radius/fonte — esses continuam vindo dos nossos tokens de marca (ADR 0003/0004/0014), sobrepostos na camada semântica (`--primary`, `--border`, etc.) em `app/globals.css`. Restante da decisão (cva pra variantes do site, `cn()` em `lib/utils.ts`, kebab-case/PascalCase, Action/DAL) permanece válido. **Organização de `components/site/` emendada por 0018**: a pasta única virou `components/{layout,forms,marketing,motion}/` por responsabilidade — kebab-case/PascalCase e cva continuam os mesmos.
 
 ## Contexto
 

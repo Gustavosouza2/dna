@@ -2,7 +2,7 @@
 
 ## Status
 
-Aceito — 2026-08-06
+Aceito — 2026-08-06. **Mecanismo de submit substituído pela [ADR 0015](0015-route-handlers-as-bff.md)**: RHF agora chama `fetch("/api/orcamento")` (Route Handler) em vez de uma Server Action como função. O resto desta ADR (schema único, RHF no controle, sem progressive enhancement) continua válido.
 
 ## Contexto
 

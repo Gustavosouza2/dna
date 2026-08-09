@@ -6,7 +6,7 @@ Aceito — 2026-08-06
 
 ## Contexto
 
-Todas as rotas do site são fixas (sem `[slug]` dinâmico, sem CMS): Home, Serviços (aéreo/rodoviário/fluvial), Orçamento, Contato, Sobre, e `/politica-de-privacidade` (ADR 0009).
+Todas as rotas do site são fixas (sem `[slug]` dinâmico, sem CMS): Home, Serviços (aéreo/rodoviário/fluvial), Orçamento, Contato, Sobre, e `/privacidade` (ADR 0009).
 
 ## Decisão
 

@@ -2,7 +2,7 @@
 
 ## Status
 
-Aceito — 2026-08-06
+Aceito — 2026-08-06. **Revertida por 0019 (2026-08-08)**: o site passou a usar `framer-motion` em vez do hook nativo — decisão explícita do cliente. O restante do raciocínio (único ponto de fronteira `"use client"` pra motion, resto do site como Server Component) continua válido, só a implementação do `<Reveal>` mudou.
 
 ## Contexto
 

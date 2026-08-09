@@ -2,7 +2,7 @@
 
 ## Status
 
-Aceito — 2026-08-06
+Aceito — 2026-08-06. **A parte de `NEXT_SERVER_ACTIONS_ENCRYPTION_KEY` ficou obsoleta pela [ADR 0015](0015-route-handlers-as-bff.md)**: o projeto não usa mais Server Actions (trocadas por Route Handlers), então não há IDs de ação pra invalidar entre deploys — nada a configurar aqui. O rate limit em memória (abaixo) continua exatamente como decidido.
 
 ## Contexto
 
