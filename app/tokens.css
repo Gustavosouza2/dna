@@ -1,0 +1,53 @@
+/**
+ * Design tokens — Dna Air Cargo.
+ * Source of truth: /design-tokens.json (repo root). Any value change
+ * starts there; this file only translates it into CSS custom properties
+ * and Tailwind v4's @theme. See docs/adr/0003, 0004 and 0014.
+ *
+ * No dark mode (ADR 0003) — single theme.
+ */
+
+:root {
+  /* Color — brand */
+  --color-blue-50: #f1f4ff;
+  --color-blue-100: #dce4ff;
+  --color-blue-500: #3d63f0;
+  --color-blue-600: #2b4fe0; /* primary */
+  --color-blue-700: #1d3fc7; /* primary button hover/active */
+
+  --color-green-50: #e9faf0;
+  --color-green-600: #1ba64c; /* reserved only for the WhatsApp CTA */
+  --color-green-700: #158a3f;
+
+  /* Color — neutrals */
+  --color-navy: #0e1a33;
+  --color-slate-600: #57647c;
+  --color-slate-400: #8a93a6;
+  --color-line: #e4e8f0;
+  --color-bg: #f7f8fb;
+
+  /* Typography — no --font-mono: JetBrains Mono was removed from the
+     root layout (no real use on the site, a performance finding from
+     the improvement sweep). If monospace is ever needed again, reload
+     the font in the layout before reintroducing the token. */
+  --font-display: var(--font-manrope), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+
+  /* Radius — explicit values, not derived via calc() (ADR 0014) */
+  --radius-sm: 7px; /* inputs, small badges */
+  --radius-md: 10px; /* cards, buttons */
+  --radius-lg: 14px; /* large cards, panels — design system ceiling */
+
+  /* Shadow */
+  --shadow-card: 0 1px 3px rgba(14, 26, 51, 0.06);
+  --shadow-card-hover: 0 8px 24px rgba(43, 79, 224, 0.08);
+
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-reveal: 500ms;
+}
+
+/* Mapping into Tailwind's @theme lives in globals.css, in a single
+   @theme inline block alongside shadcn's semantic layer — see the
+   comment there for why this isn't split across two files. */
