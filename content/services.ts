@@ -59,22 +59,22 @@ export const SERVICES: ServiceContent[] = [
     icon: TruckIcon,
     title: "Transporte rodoviário",
     description:
-      "Frota moderna e equipe especializada para cargas de todos os portes e distâncias.",
+      "Equipe especializada e parceiros transportadores qualificados para cargas de todos os portes e distâncias.",
     longDescription:
-      "Frota moderna e equipe especializada para cargas de todos os portes. Oferecemos flexibilidade de rotas e horários para atender suas necessidades.",
+      "Equipe especializada e parceiros transportadores qualificados para cargas de todos os portes. Oferecemos flexibilidade de rotas e horários para atender suas necessidades.",
     image: "/images/servico-rodoviario.jpg",
     highlights: [
       { icon: PackageIcon, label: "Carga fracionada" },
-      { icon: TruckIcon, label: "Frota moderna" },
+      { icon: TruckIcon, label: "Equipe especializada" },
       { icon: ShieldIcon, label: "Rastreamento GPS" },
     ],
     benefits: [
-      "Frota própria rastreada por GPS",
+      "Parceiros transportadores rastreados por GPS",
       "Cargas fracionadas ou completas",
       "Coleta e entrega porta a porta",
       "Flexibilidade de horários",
       "Motoristas treinados e certificados",
-      "Manutenção preventiva regular",
+      "Parceiros avaliados e homologados",
     ],
   },
   {

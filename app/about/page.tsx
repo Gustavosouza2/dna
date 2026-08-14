@@ -80,8 +80,7 @@ export default function AboutPage() {
               Sobre a Dna Air Cargo
             </h1>
             <p className="mt-6 text-xl leading-relaxed text-slate-600">
-
-                                            o Brasil através de soluções inteligentes em
+              Conectamos o Brasil através de soluções inteligentes em
               logística e transporte de cargas.
             </p>
           </Reveal>
@@ -89,7 +88,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-blue-600 py-16 text-white">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 md:grid-cols-4 md:px-8">
+        <div className="mx-auto grid max-w-xl grid-cols-2 gap-8 px-6 md:px-8">
           {STATS.map((stat, i) => (
             <Reveal key={stat.label} delayMs={i * 100}>
               <div className="text-center">
@@ -129,8 +128,8 @@ export default function AboutPage() {
           <Reveal delayMs={150}>
             <div className="relative h-[400px] w-full overflow-hidden rounded-lg shadow-card-hover">
               <Image
-                src="/images/equipe-sobre.jpg"
-                alt="Equipe Dna Air Cargo"
+                src="/images/estrutura-sobre.jpg"
+                alt="Centro de distribuição da Dna Air Cargo, com docas de carregamento, paletes e estruturas porta-paletes"
                 fill
                 sizes="(min-width: 720px) 50vw, 100vw"
                 className="object-cover"

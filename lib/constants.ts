@@ -34,7 +34,5 @@ export const FOOTER_NAV_ITEMS = [
 
 export const STATS = [
   { value: "26+", label: "Anos de experiência" },
-  { value: "2.847", label: "Clientes atendidos" },
-  { value: "97%", label: "Taxa de pontualidade" },
   { value: "24/7", label: "Suporte disponível" },
 ] as const
