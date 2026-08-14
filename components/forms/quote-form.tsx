@@ -30,9 +30,11 @@ export function QuoteForm() {
     handleSubmit,
     control,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isValid },
   } = useForm<QuoteInput>({
     resolver: zodResolver(quoteSchema),
+    // onChange para o botão refletir a validade do formulário em tempo real.
+    mode: "onChange",
     defaultValues: {
       name: "",
       email: "",
@@ -69,6 +71,9 @@ export function QuoteForm() {
   }
 
   const pending = isSubmitting
+  // Envio só liberado com os campos obrigatórios preenchidos e o
+  // aceite da Política de Privacidade marcado.
+  const canSubmit = isValid
 
   return (
     <div aria-live="polite">
@@ -188,7 +193,11 @@ export function QuoteForm() {
             </p>
           )}
 
-          <Button type="submit" disabled={pending} className="mt-2 self-start">
+          <Button
+            type="submit"
+            disabled={pending || !canSubmit}
+            className="mt-2 self-start"
+          >
             {pending ? "Enviando..." : "Solicitar orçamento"}
           </Button>
         </form>

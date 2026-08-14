@@ -70,6 +70,26 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal delayMs={100} className="flex flex-col gap-6">
+            <div className="rounded-lg border border-green-600/20 bg-green-50 p-6">
+              <h3 className="font-display font-bold text-navy">
+                Atendimento rápido
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                Precisa de uma resposta imediata? Fale conosco pelo WhatsApp.
+              </p>
+              <Button
+                variant="whatsapp"
+                className="mt-4 w-full"
+                nativeButton={false}
+                render={
+                  <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" />
+                }
+              >
+                <MessageCircleIcon className="size-5" />
+                Falar no WhatsApp
+              </Button>
+            </div>
+
             <div className="rounded-lg border border-line bg-white p-6 shadow-card">
               <h3 className="font-display text-lg font-bold text-navy">
                 Informações de contato
@@ -95,37 +115,6 @@ export default function ContactPage() {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            <div className="rounded-lg border border-green-600/20 bg-green-50 p-6">
-              <h3 className="font-display font-bold text-navy">
-                Atendimento rápido
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Precisa de uma resposta imediata? Fale conosco pelo WhatsApp.
-              </p>
-              <Button
-                variant="whatsapp"
-                className="mt-4 w-full"
-                nativeButton={false}
-                render={
-                  <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" />
-                }
-              >
-                <MessageCircleIcon className="size-5" />
-                Falar no WhatsApp
-              </Button>
-            </div>
-
-            <div className="rounded-lg border border-line bg-white p-6 shadow-card">
-              <h3 className="font-display font-bold text-navy">Localização</h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Estamos localizados em São Paulo, atendendo todo o Brasil e
-                exterior.
-              </p>
-              <div className="mt-4 flex h-48 w-full items-center justify-center rounded-lg bg-bg">
-                <MapPinIcon className="size-8 text-slate-400" />
               </div>
             </div>
           </Reveal>

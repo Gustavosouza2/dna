@@ -1,13 +1,25 @@
 import { expect, test } from "@playwright/test"
 
 test.describe("Contact form", () => {
-  test("shows validation errors on empty submit, without navigating", async ({ page }) => {
+  test("keeps the submit button disabled until required fields and consent are filled", async ({
+    page,
+  }) => {
     await page.goto("/contact")
 
-    await page.getByRole("button", { name: "Enviar mensagem" }).click()
+    const submit = page.getByRole("button", { name: "Enviar mensagem" })
+    await expect(submit).toBeDisabled()
 
-    await expect(page.getByText("Informe seu nome completo")).toBeVisible()
-    await expect(page).toHaveURL(/\/contact$/)
+    await page.getByLabel("Nome completo").fill("João Souza")
+    await page.getByLabel("E-mail").fill("joao@example.com")
+    await page
+      .getByLabel("Mensagem")
+      .fill("Preciso de mais informações sobre transporte fluvial.")
+
+    // Ainda falta o aceite da política de privacidade.
+    await expect(submit).toBeDisabled()
+
+    await page.getByRole("checkbox").click()
+    await expect(submit).toBeEnabled()
   })
 
   test("submits successfully and allows sending another message", async ({ page }) => {
