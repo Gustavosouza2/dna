@@ -26,7 +26,7 @@ describe("Footer", () => {
 
   it("renders the contact email as a mailto link", () => {
     render(<Footer />)
-    const link = screen.getByRole("link", { name: "contactdna@gmail.com" })
-    expect(link).toHaveAttribute("href", "mailto:contactdna@gmail.com")
+    const link = screen.getByRole("link", { name: "comercial@dnaaircargo.com.br" })
+    expect(link).toHaveAttribute("href", "mailto:comercial@dnaaircargo.com.br")
   })
 })
