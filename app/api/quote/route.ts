@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
   const { name, email, phone, origin, destination, transportType, cargoType, weightVolume } =
     parsed.data
 
-  const { success } = await sendNotificationEmail({
+  const result = await sendNotificationEmail({
     subject: `Novo pedido de orçamento — ${escapeHtml(name)}`,
     replyTo: email,
     html: `
@@ -57,11 +57,12 @@ export async function POST(request: NextRequest) {
     `,
   })
 
-  if (!success) {
-    return NextResponse.json(
-      { error: "Não foi possível enviar sua solicitação. Tente novamente." },
-      { status: 502 }
-    )
+  if (!result.success) {
+    const message =
+      result.reason === "not_configured"
+        ? "Formulário de orçamento temporariamente indisponível. Tente novamente mais tarde ou fale conosco pelo telefone/WhatsApp."
+        : "Não foi possível enviar sua solicitação. Tente novamente."
+    return NextResponse.json({ error: message }, { status: 502 })
   }
 
   return NextResponse.json({ success: true })

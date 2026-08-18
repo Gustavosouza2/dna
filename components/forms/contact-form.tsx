@@ -23,9 +23,11 @@ export function ContactForm() {
     handleSubmit,
     control,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isValid },
   } = useForm<ContactInput>({
     resolver: zodResolver(contactSchema),
+    // onChange para o botão refletir a validade do formulário em tempo real.
+    mode: "onChange",
     defaultValues: {
       name: "",
       email: "",
@@ -35,6 +37,7 @@ export function ContactForm() {
       consent: undefined,
     },
   })
+
 
   const [serverError, setServerError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
@@ -60,6 +63,9 @@ export function ContactForm() {
   }
 
   const pending = isSubmitting
+  // Envio só liberado com os campos obrigatórios preenchidos e o
+  // aceite da Política de Privacidade marcado.
+  const canSubmit = isValid
 
   return (
     <div aria-live="polite">
@@ -136,7 +142,7 @@ export function ContactForm() {
             </p>
           )}
 
-          <Button type="submit" disabled={pending} className="mt-2 self-start">
+          <Button type="submit" disabled={pending || !canSubmit} className="mt-2 self-start">
             {pending ? "Enviando..." : "Enviar mensagem"}
           </Button>
         </form>

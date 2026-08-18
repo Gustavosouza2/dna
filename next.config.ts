@@ -10,6 +10,7 @@ const cspHeader = `
   script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""};
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   img-src 'self' blob: data:;
+  connect-src 'self'${isDev ? " ws://localhost:* ws://127.0.0.1:*" : ""};
   font-src 'self' https://fonts.gstatic.com;
   object-src 'none';
   base-uri 'self';
@@ -21,6 +22,8 @@ const cspHeader = `
   .trim();
 
 const nextConfig: NextConfig = {
+  // Don't advertise the framework/version to scanners.
+  poweredByHeader: false,
   async headers() {
     return [
       {

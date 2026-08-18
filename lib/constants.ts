@@ -4,7 +4,7 @@ export const CONTACT = {
   phoneDisplay: "(11) 94706-4090",
   phoneE164: "+5511947064090",
   whatsappUrl: "https://wa.me/5511947064090",
-  email: "contactdna@gmail.com",
+  email: "comercial@dnaaircargo.com.br",
   // TODO: confirm with the client whether the address stays at
   // city/state level only or a full street address should be added
   // (also affects the JSON-LD LocalBusiness — see docs/specs).
@@ -34,7 +34,5 @@ export const FOOTER_NAV_ITEMS = [
 
 export const STATS = [
   { value: "26+", label: "Anos de experiência" },
-  { value: "2.847", label: "Clientes atendidos" },
-  { value: "97%", label: "Taxa de pontualidade" },
   { value: "24/7", label: "Suporte disponível" },
 ] as const

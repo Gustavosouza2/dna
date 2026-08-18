@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
 
   const { name, email, phone, subject, message } = parsed.data
 
-  const { success } = await sendNotificationEmail({
+  const result = await sendNotificationEmail({
     subject: subject
       ? `Contato pelo site — ${escapeHtml(subject)}`
       : `Contato pelo site — ${escapeHtml(name)}`,
@@ -49,11 +49,12 @@ export async function POST(request: NextRequest) {
     `,
   })
 
-  if (!success) {
-    return NextResponse.json(
-      { error: "Não foi possível enviar sua mensagem. Tente novamente." },
-      { status: 502 }
-    )
+  if (!result.success) {
+    const message =
+      result.reason === "not_configured"
+        ? "Formulário de contato temporariamente indisponível. Tente novamente mais tarde ou fale conosco pelo telefone/WhatsApp."
+        : "Não foi possível enviar sua mensagem. Tente novamente."
+    return NextResponse.json({ error: message }, { status: 502 })
   }
 
   return NextResponse.json({ success: true })

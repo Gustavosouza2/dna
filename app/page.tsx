@@ -45,15 +45,26 @@ export default function HomePage() {
   return (
     <>
       <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero-operacao.jpg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
+        <div className="absolute inset-0 z-0 flex">
+          <div className="relative h-full w-1/2 overflow-hidden">
+            <Image
+              src="/images/servico-aereo.jpg"
+              alt=""
+              fill
+              priority
+              sizes="50vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative h-full w-1/2 overflow-hidden">
+            <Image
+              src="/images/servico-rodoviario.jpg"
+              alt=""
+              fill
+              sizes="50vw"
+              className="object-cover"
+            />
+          </div>
           <div className="absolute inset-0 bg-linear-to-r from-navy/90 via-navy/70 to-navy/50" />
         </div>
 
