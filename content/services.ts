@@ -36,9 +36,9 @@ export const SERVICES: ServiceContent[] = [
     icon: PlaneIcon,
     title: "Transporte aéreo",
     description:
-      "Entregas rápidas e seguras para todo o Brasil e exterior com rastreamento em tempo real.",
+      "Entregas rápidas e seguras para todo o Brasil com rastreamento em tempo real.",
     longDescription:
-      "Entregas rápidas e seguras para todo o Brasil e exterior. Nossa rede de parceiros garante conexões eficientes com os principais aeroportos do país.",
+      "Entregas rápidas e seguras para todo o Brasil. Nossa rede de parceiros garante conexões eficientes com os principais aeroportos do país.",
     image: "/images/servico-aereo.jpg",
     highlights: [
       { icon: ClockIcon, label: "Entregas em até 24h" },
