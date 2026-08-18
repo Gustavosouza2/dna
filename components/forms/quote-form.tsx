@@ -24,6 +24,12 @@ import { quoteSchema, type QuoteInput } from "@/lib/schemas/quote"
  * fetch (ADR 0015, replaces the Server Action from ADR 0006) — not via
  * <form action>. No progressive enhancement, an accepted trade-off.
  */
+const TRANSPORT_TYPES = {
+  air: "Aéreo",
+  road: "Rodoviário",
+  river: "Fluvial",
+} as const
+
 export function QuoteForm() {
   const {
     register,
@@ -114,7 +120,11 @@ export function QuoteForm() {
                 control={control}
                 name="transportType"
                 render={({ field }) => (
-                  <Select value={field.value ?? null} onValueChange={field.onChange}>
+                  <Select
+                    items={TRANSPORT_TYPES}
+                    value={field.value ?? null}
+                    onValueChange={field.onChange}
+                  >
                     <SelectTrigger
                       id="transportType"
                       className="w-full"
@@ -126,9 +136,11 @@ export function QuoteForm() {
                       <SelectValue placeholder="Selecione" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="air">Aéreo</SelectItem>
-                      <SelectItem value="road">Rodoviário</SelectItem>
-                      <SelectItem value="river">Fluvial</SelectItem>
+                      {Object.entries(TRANSPORT_TYPES).map(([value, label]) => (
+                        <SelectItem key={value} value={value}>
+                          {label}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 )}
